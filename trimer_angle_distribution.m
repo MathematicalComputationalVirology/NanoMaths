@@ -8,7 +8,7 @@ n = 28;
 for i = 1:n
     c = [c [A(i,4); A(i,5); A(i,6)]];
 end
-% scaling factor to get right angles around 3-fold axis 
+% scaling factor to get correct angles around 3-fold axis 
 k = 1.266;
 fid = fopen('trimers.dat','w');
 arm_len = [];
