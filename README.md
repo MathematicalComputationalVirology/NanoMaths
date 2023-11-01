@@ -5,6 +5,8 @@ In each code the range of S is currently specified according to the experimental
 The input is the range of theta, and the output is the corresponding range of delta. In the paper (Fig. 4d) we indicate the value of
 delta closest to the experimentally observed range.
 
+.dat files (coordinates of cages) are being generated using the Carbon Generator (CaGe) programme: Brinkmann, G., Delgado-Friedrichs, O., Lisken, S., Peeters, A. & Van Cleemput, N. CaGe: a virtual environment for studying some special classes of plane graphs : an update. MATCH-COMMUNICATIONS IN MATHEMATICAL AND IN COMPUTER CHEMISTRY 63, 533–552 (2010).
+
 Files called "trimer_angle_distribution.m", "finding_minimal_arm_length.m", "plotting_k_range.m" and "trimer_distribution_range_check.m" are for I32-10 cages:
 
 plotting_k_range.m finds minimal frequency (mf) for various scaling factors (k) and plots the results.
