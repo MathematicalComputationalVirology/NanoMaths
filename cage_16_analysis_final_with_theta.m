@@ -51,25 +51,25 @@ for jj = 1:n_y
             V1 = P10-P15;
             V2 = R5-(P10+P15)/2;
             ang = -theta1;
-            [Ro,t]=AxelRot(ang,V1,(P10+P15)/2);
+            Ro = Rotation Matrix;
             R5 = Ro*(V2)+(P10+P15)/2;
 
             V1 = P16-P15;
             V2 = R4-(P16+P15)/2;
             ang = theta1;
-            [Ro,t]=AxelRot(ang,V1,(P16+P15)/2);
+            Ro = Rotation Matrix;
             R4 = Ro*(V2)+(P16+P15)/2;
 
             V1 = P9-P14;
             V2 = R2-(P9+P14)/2;
             ang = theta2;
-            [Ro,t]=AxelRot(ang,V1,(P9+P14)/2);
+            Ro = Rotation Matrix;
             R2 = Ro*(V2)+(P9+P14)/2;
 
             V1 = P13-P14;
             V2 = R1-(P13+P14)/2;
             ang = theta2;
-            [Ro,t]=AxelRot(ang,V1,(P13+P14)/2);
+            Ro = Rotation Matrix;
             R1 = Ro*(V2)+(P13+P14)/2;
 
             x1 = acos(dot(R1-P14,R2-P14)/norm(R1-P14)/norm(R2-P14))*180/pi;
@@ -108,25 +108,25 @@ for jj = 1:n_y
             V1 = P10-P15;
             V2 = R5-(P10+P15)/2;
             ang = -theta1;
-            [Ro,t]=AxelRot(ang,V1,(P10+P15)/2);
+            Ro = Rotation Matrix;
             R5 = Ro*(V2)+(P10+P15)/2;
 
             V1 = P16-P15;
             V2 = R4-(P16+P15)/2;
             ang = theta1;
-            [Ro,t]=AxelRot(ang,V1,(P16+P15)/2);
+            Ro = Rotation Matrix;
             R4 = Ro*(V2)+(P16+P15)/2;
 
             V1 = P9-P14;
             V2 = R2-(P9+P14)/2;
             ang = theta2;
-            [Ro,t]=AxelRot(ang,V1,(P9+P14)/2);
+            Ro = Rotation Matrix;
             R2 = Ro*(V2)+(P9+P14)/2;
 
             V1 = P13-P14;
             V2 = R1-(P13+P14)/2;
             ang = theta2;
-            [Ro,t]=AxelRot(ang,V1,(P13+P14)/2);
+            Ro = Rotation Matrix;
             R1 = Ro*(V2)+(P13+P14)/2;
 
             D1 = acos(dot(R1-P14,R1-P13)/norm(R1-P14)/norm(R1-P13))*180/pi;
@@ -144,94 +144,3 @@ colorbar
 xlabel('$\theta_1$','Interpreter','latex','FontSize',20)
 ylabel('$\theta_2$','Interpreter','latex','FontSize',20)
 cputime-tt
-
-% if isempty(D)
-%     fprintf('It is not posible');
-% else
-%     [M,I] = min(D);
-%     k = s_fac(ind(I));
-%     Q9 = k*P9;
-%     Q13 = k*P13;
-%     Q14 = k*P14;
-%     Q15 = k*P15;
-%     Q10 = k*P10;
-%     Q16 = k*P16;
-%     R1 = (Q13+Q14)/2;
-%     R2 = (Q9+Q14)/2;
-%     R3 = (Q15+Q14)/2;
-%     R4 = (Q16+Q15)/2;
-%     R5 = (Q10+Q15)/2;
-% 
-% 
-%     V1 = P10-P15;
-%     V2 = R5-(P10+P15)/2;
-%     ang = -theta1;
-%     [Ro,t]=AxelRot(ang,V1,(P10+P15)/2);
-%     R5 = Ro*(V2)+(P10+P15)/2;
-% 
-%     V1 = P16-P15;
-%     V2 = R4-(P16+P15)/2;
-%     ang = theta1;
-%     [Ro,t]=AxelRot(ang,V1,(P16+P15)/2);
-%     R4 = Ro*(V2)+(P16+P15)/2;
-% 
-%     V1 = P9-P14;
-%     V2 = R2-(P9+P14)/2;
-%     ang = theta2;
-%     [Ro,t]=AxelRot(ang,V1,(P9+P14)/2);
-%     R2 = Ro*(V2)+(P9+P14)/2;
-% 
-%     V1 = P13-P14;
-%     V2 = R1-(P13+P14)/2;
-%     ang = theta2;
-%     [Ro,t]=AxelRot(ang,V1,(P13+P14)/2);
-%     R1 = Ro*(V2)+(P13+P14)/2;
-% 
-%     plot3([P14(1) P9(1)], [P14(2) P9(2)], [P14(3) P9(3)], 'k','LineWidth',3)
-%     axis equal
-%     axis off
-%     hold on
-%     plot3([P14(1) P13(1)], [P14(2) P13(2)], [P14(3) P13(3)], 'k','LineWidth',3)
-%     hold on
-%     plot3([P14(1) P15(1)], [P14(2) P15(2)], [P14(3) P15(3)], 'k','LineWidth',3)
-%     hold on
-%     plot3([P15(1) P10(1)], [P15(2) P10(2)], [P15(3) P10(3)], 'k','LineWidth',3)
-%     hold on
-%     plot3([P15(1) P16(1)], [P15(2) P16(2)], [P15(3) P16(3)], 'k','LineWidth',3)
-%     hold on
-%     plot3([R2(1) P9(1)], [R2(2) P9(2)], [R2(3) P9(3)], 'b','LineWidth',3)
-%     hold on
-%     plot3([R1(1) P13(1)], [R1(2) P13(2)], [R1(3) P13(3)], 'b','LineWidth',3)
-%     hold on
-%     plot3([R1(1) P14(1)], [R1(2) P14(2)], [R1(3) P14(3)], 'b','LineWidth',3)
-%     hold on
-%     plot3([R2(1) P14(1)], [R2(2) P14(2)], [R2(3) P14(3)], 'b','LineWidth',3)
-%     hold on
-%     plot3([R3(1) P14(1)], [R3(2) P14(2)], [R3(3) P14(3)], 'b','LineWidth',3)
-%     hold on
-%     plot3([R3(1) P15(1)], [R3(2) P15(2)], [R3(3) P15(3)], 'b','LineWidth',3)
-%     hold on
-%     plot3([R4(1) P15(1)], [R4(2) P15(2)], [R4(3) P15(3)], 'b','LineWidth',3)
-%     hold on
-%     plot3([R5(1) P15(1)], [R5(2) P15(2)], [R5(3) P15(3)], 'b','LineWidth',3)
-%     hold on
-%     plot3([R5(1) P10(1)], [R5(2) P10(2)], [R5(3) P10(3)], 'b','LineWidth',3)
-%     hold on
-%     plot3([R4(1) P16(1)], [R4(2) P16(2)], [R4(3) P16(3)], 'b','LineWidth',3)
-%     hold off
-% 
-%     x1 = acos(dot(R1-P14,R2-P14)/norm(R1-P14)/norm(R2-P14))*180/pi;
-%     x2 = acos(dot(R3-P14,R2-P14)/norm(R3-P14)/norm(R2-P14))*180/pi;
-%     x3 = acos(dot(R3-P14,R1-P14)/norm(R3-P14)/norm(R1-P14))*180/pi;
-%     x555 = x1+x2+x3;
-%     y1 = acos(dot(R3-P15,R4-P15)/norm(R3-P15)/norm(R4-P15))*180/pi;
-%     y2 = acos(dot(R4-P15,R5-P15)/norm(R4-P15)/norm(R5-P15))*180/pi;
-%     y3 = acos(dot(R5-P15,R3-P15)/norm(R5-P15)/norm(R3-P15))*180/pi;
-%     y455 = y1+y2+y3;
-%     x555y455 = [x555 y455]
-%     D1 = acos(dot(R1-P14,R1-P13)/norm(R1-P14)/norm(R1-P13))*180/pi;
-%     D2 = acos(dot(R3-P14,R3-P15)/norm(R3-P14)/norm(R3-P15))*180/pi;
-%     D3 = acos(dot(R5-P10,R5-P15)/norm(R5-P10)/norm(R5-P15))*180/pi;
-%     deltas = [D1 D2 D3]
-%     average_deta = mean(deltas)
-% end
