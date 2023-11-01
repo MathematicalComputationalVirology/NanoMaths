@@ -5,8 +5,6 @@ In each code the range of S is currently specified according to the experimental
 The input is the range of theta, and the output is the corresponding range of delta. In the paper (Fig. 4d) we indicate the value of
 delta closest to the experimentally observed range.
 
-These codes use AxelRot.m function: Matt J (2022). 3D Rotation about Shifted Axis (https://www.mathworks.com/matlabcentral/fileexchange/30864-3d-rotation-about-shifted-axis), MATLAB Central File Exchange. Retrieved February 21, 2022.
-
 Files called "trimer_angle_distribution.m", "finding_minimal_arm_length.m", "plotting_k_range.m" and "trimer_distribution_range_check.m" are for I32-10 cages:
 
 plotting_k_range.m finds minimal frequency (mf) for various scaling factors (k) and plots the results.
