@@ -46,37 +46,49 @@ for jj = 1:n_y
             V1 = P2-P5;
             V2 = R1-(P2+P5)/2;
             ang = -theta1;
-            Ro = Rotation Matrix;
+            u = V1/norm(V1);
+            ux = [0 -u(3) u(2); u(3) 0 -u(1); -u(2) u(1) 0];
+            Ro = cosd(ang)*eye(3)+sind(ang)*ux+(1-cosd(ang))*(u*u.');
             R1 = Ro*(V2)+(P2+P5)/2;
 
             V1 = P9-P5;
             V2 = R2-(P9+P5)/2;
             ang = -theta1;
-            Ro = Rotation Matrix;
+            u = V1/norm(V1);
+            ux = [0 -u(3) u(2); u(3) 0 -u(1); -u(2) u(1) 0];
+            Ro = cosd(ang)*eye(3)+sind(ang)*ux+(1-cosd(ang))*(u*u.');
             R2 = Ro*(V2)+(P9+P5)/2;
 
             V1 = P10-P5;
             V2 = R3-(P10+P5)/2;
             ang = -theta1;
-            Ro = Rotation Matrix;
+            u = V1/norm(V1);
+            ux = [0 -u(3) u(2); u(3) 0 -u(1); -u(2) u(1) 0];
+            Ro = cosd(ang)*eye(3)+sind(ang)*ux+(1-cosd(ang))*(u*u.');
             R3 = Ro*(V2)+(P10+P5)/2;
 
             V1 = P11-P10;
             V2 = R4-(P11+P10)/2;
             ang = -theta2;
-            Ro = Rotation Matrix;
+            u = V1/norm(V1);
+            ux = [0 -u(3) u(2); u(3) 0 -u(1); -u(2) u(1) 0];
+            Ro = cosd(ang)*eye(3)+sind(ang)*ux+(1-cosd(ang))*(u*u.');
             R4 = Ro*(V2)+(P11+P10)/2;
 
             V1 = P14-P10;
             V2 = R5-(P14+P10)/2;
             ang = theta2;
-            Ro = Rotation Matrix;
+            u = V1/norm(V1);
+            ux = [0 -u(3) u(2); u(3) 0 -u(1); -u(2) u(1) 0];
+            Ro = cosd(ang)*eye(3)+sind(ang)*ux+(1-cosd(ang))*(u*u.');
             R5 = Ro*(V2)+(P14+P10)/2;
 
             V1 = P12-P11;
             V2 = R7-(P12+P11)/2;
             ang = -theta2;
-            Ro = Rotation Matrix;
+            u = V1/norm(V1);
+            ux = [0 -u(3) u(2); u(3) 0 -u(1); -u(2) u(1) 0];
+            Ro = cosd(ang)*eye(3)+sind(ang)*ux+(1-cosd(ang))*(u*u.');
             R7 = Ro*(V2)+(P12+P11)/2;
 
             x1 = acos(dot(R1-P5,R2-P5)/norm(R1-P5)/norm(R2-P5))*180/pi;
@@ -122,37 +134,49 @@ for jj = 1:n_y
             V1 = P2-P5;
             V2 = R1-(P2+P5)/2;
             ang = -theta1;
-            Ro = Rotation Matrix;
+            u = V1/norm(V1);
+            ux = [0 -u(3) u(2); u(3) 0 -u(1); -u(2) u(1) 0];
+            Ro = cosd(ang)*eye(3)+sind(ang)*ux+(1-cosd(ang))*(u*u.');
             R1 = Ro*(V2)+(P2+P5)/2;
 
             V1 = P9-P5;
             V2 = R2-(P9+P5)/2;
             ang = -theta1;
-            Ro = Rotation Matrix;
+            u = V1/norm(V1);
+            ux = [0 -u(3) u(2); u(3) 0 -u(1); -u(2) u(1) 0];
+            Ro = cosd(ang)*eye(3)+sind(ang)*ux+(1-cosd(ang))*(u*u.');
             R2 = Ro*(V2)+(P9+P5)/2;
 
             V1 = P10-P5;
             V2 = R3-(P10+P5)/2;
             ang = -theta1;
-            Ro = Rotation Matrix;
+            u = V1/norm(V1);
+            ux = [0 -u(3) u(2); u(3) 0 -u(1); -u(2) u(1) 0];
+            Ro = cosd(ang)*eye(3)+sind(ang)*ux+(1-cosd(ang))*(u*u.');
             R3 = Ro*(V2)+(P10+P5)/2;
 
             V1 = P11-P10;
             V2 = R4-(P11+P10)/2;
             ang = -theta2;
-            Ro = Rotation Matrix;
+            u = V1/norm(V1);
+            ux = [0 -u(3) u(2); u(3) 0 -u(1); -u(2) u(1) 0];
+            Ro = cosd(ang)*eye(3)+sind(ang)*ux+(1-cosd(ang))*(u*u.');
             R4 = Ro*(V2)+(P11+P10)/2;
 
             V1 = P14-P10;
             V2 = R5-(P14+P10)/2;
             ang = theta2;
-            Ro = Rotation Matrix;
+            u = V1/norm(V1);
+            ux = [0 -u(3) u(2); u(3) 0 -u(1); -u(2) u(1) 0];
+            Ro = cosd(ang)*eye(3)+sind(ang)*ux+(1-cosd(ang))*(u*u.');
             R5 = Ro*(V2)+(P14+P10)/2;
 
             V1 = P12-P11;
             V2 = R7-(P12+P11)/2;
             ang = -theta2;
-            Ro = Rotation Matrix;
+            u = V1/norm(V1);
+            ux = [0 -u(3) u(2); u(3) 0 -u(1); -u(2) u(1) 0];
+            Ro = cosd(ang)*eye(3)+sind(ang)*ux+(1-cosd(ang))*(u*u.');
             R7 = Ro*(V2)+(P12+P11)/2;
 
             D1 = acos(dot(R1-P5,R1-P2)/norm(R1-P5)/norm(R1-P2))*180/pi;
