@@ -51,25 +51,33 @@ for jj = 1:n_y
             V1 = P10-P15;
             V2 = R5-(P10+P15)/2;
             ang = -theta1;
-            Ro = Rotation Matrix;
+            u = V1/norm(V1);
+            ux = [0 -u(3) u(2); u(3) 0 -u(1); -u(2) u(1) 0];
+            Ro = cosd(ang)*eye(3)+sind(ang)*ux+(1-cosd(ang))*(u*u.');
             R5 = Ro*(V2)+(P10+P15)/2;
 
             V1 = P16-P15;
             V2 = R4-(P16+P15)/2;
             ang = theta1;
-            Ro = Rotation Matrix;
+            u = V1/norm(V1);
+            ux = [0 -u(3) u(2); u(3) 0 -u(1); -u(2) u(1) 0];
+            Ro = cosd(ang)*eye(3)+sind(ang)*ux+(1-cosd(ang))*(u*u.');
             R4 = Ro*(V2)+(P16+P15)/2;
 
             V1 = P9-P14;
             V2 = R2-(P9+P14)/2;
             ang = theta2;
-            Ro = Rotation Matrix;
+            u = V1/norm(V1);
+            ux = [0 -u(3) u(2); u(3) 0 -u(1); -u(2) u(1) 0];
+            Ro = cosd(ang)*eye(3)+sind(ang)*ux+(1-cosd(ang))*(u*u.');
             R2 = Ro*(V2)+(P9+P14)/2;
 
             V1 = P13-P14;
             V2 = R1-(P13+P14)/2;
             ang = theta2;
-            Ro = Rotation Matrix;
+            u = V1/norm(V1);
+            ux = [0 -u(3) u(2); u(3) 0 -u(1); -u(2) u(1) 0];
+            Ro = cosd(ang)*eye(3)+sind(ang)*ux+(1-cosd(ang))*(u*u.');
             R1 = Ro*(V2)+(P13+P14)/2;
 
             x1 = acos(dot(R1-P14,R2-P14)/norm(R1-P14)/norm(R2-P14))*180/pi;
@@ -108,25 +116,33 @@ for jj = 1:n_y
             V1 = P10-P15;
             V2 = R5-(P10+P15)/2;
             ang = -theta1;
-            Ro = Rotation Matrix;
+            u = V1/norm(V1);
+            ux = [0 -u(3) u(2); u(3) 0 -u(1); -u(2) u(1) 0];
+            Ro = cosd(ang)*eye(3)+sind(ang)*ux+(1-cosd(ang))*(u*u.');
             R5 = Ro*(V2)+(P10+P15)/2;
 
             V1 = P16-P15;
             V2 = R4-(P16+P15)/2;
             ang = theta1;
-            Ro = Rotation Matrix;
+            u = V1/norm(V1);
+            ux = [0 -u(3) u(2); u(3) 0 -u(1); -u(2) u(1) 0];
+            Ro = cosd(ang)*eye(3)+sind(ang)*ux+(1-cosd(ang))*(u*u.');
             R4 = Ro*(V2)+(P16+P15)/2;
 
             V1 = P9-P14;
             V2 = R2-(P9+P14)/2;
             ang = theta2;
-            Ro = Rotation Matrix;
+            u = V1/norm(V1);
+            ux = [0 -u(3) u(2); u(3) 0 -u(1); -u(2) u(1) 0];
+            Ro = cosd(ang)*eye(3)+sind(ang)*ux+(1-cosd(ang))*(u*u.');
             R2 = Ro*(V2)+(P9+P14)/2;
 
             V1 = P13-P14;
             V2 = R1-(P13+P14)/2;
             ang = theta2;
-            Ro = Rotation Matrix;
+            u = V1/norm(V1);
+            ux = [0 -u(3) u(2); u(3) 0 -u(1); -u(2) u(1) 0];
+            Ro = cosd(ang)*eye(3)+sind(ang)*ux+(1-cosd(ang))*(u*u.');
             R1 = Ro*(V2)+(P13+P14)/2;
 
             D1 = acos(dot(R1-P14,R1-P13)/norm(R1-P14)/norm(R1-P13))*180/pi;
